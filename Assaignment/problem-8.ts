@@ -1,5 +1,5 @@
 {
-    const validateKeys= <T,Q extends keyof T> (obj:T, Keys: Q[]) =>{
+    const validateKeys= <T> (obj:T, Keys:(keyof T)[]) =>{
         let flag:number =0;
         for(let i:number =0;i<Keys.length;i++){
             if(!obj[Keys[i]]){
@@ -15,5 +15,5 @@
     }
 
     const person = { name: "Alice", age: 25, email: "alice@example.com" };
-    console.log(validateKeys(person, ["name", "age"]));  
+    console.log(validateKeys(person, ["name", "age", "email"]));  
 }
